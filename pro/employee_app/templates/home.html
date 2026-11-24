@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Employee list</h2>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <td>department</th>
+            <th></td>designation</th>
+            <th>salary</th>
+            <th><img src="" alt=""></th>
+        </tr>
+        {% for x in employee %}
+        <tr>
+            <td>{{x.name}}</td>
+            <td>{{x.phone}}</td>
+            <td>{{x.email}}</td>
+            <td>{{x.department}}</td>
+            <td>{{x.designation}}</td>
+            <td>{{x.salary}}</td>
+            <td>{{x.}}</td>
+            <td><a href="{% url 'edit' x.id %}">edit</a><a href="{% url 'delete' x.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+        <a href="{% url 'add' %}">add</a>
+    </table>
+</body>
+</html>
